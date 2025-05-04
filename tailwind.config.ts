@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				glow: {
+					purple: "#8B5CF6",
+					pink: "#D946EF",
+					blue: "#0EA5E9",
+					teal: "#2DD4BF",
+					orange: "#F97316",
+					yellow: "#FACC15"
 				}
 			},
 			borderRadius: {
@@ -84,11 +93,51 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-glow': {
+					'0%, 100%': { 
+						opacity: '1',
+						filter: 'brightness(1) blur(0px)'
+					},
+					'50%': { 
+						opacity: '0.8',
+						filter: 'brightness(1.2) blur(1px)'
+					}
+				},
+				'equalizer': {
+					'0%': { height: '5px' },
+					'50%': { height: '20px' },
+					'100%': { height: '5px' }
+				},
+				'rotate': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'wave': {
+					'0%': { transform: 'scale(0.8)', opacity: '0.5' },
+					'50%': { transform: 'scale(1)', opacity: '1' },
+					'100%': { transform: 'scale(0.8)', opacity: '0.5' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'equalizer-1': 'equalizer 1s ease-in-out infinite',
+				'equalizer-2': 'equalizer 1.4s ease-in-out 0.2s infinite',
+				'equalizer-3': 'equalizer 0.8s ease-in-out 0.4s infinite',
+				'rotate-slow': 'rotate 8s linear infinite',
+				'wave': 'wave 1.5s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'glow-conic':
+					'conic-gradient(from 180deg at 50% 50%, #8B5CF6 0deg, #D946EF 90deg, #0EA5E9 180deg, #2DD4BF 270deg, #8B5CF6 360deg)',
+				'glow-radial': 
+					'radial-gradient(circle, rgba(139,92,246,0.3) 0%, rgba(217,70,239,0.2) 25%, rgba(14,165,233,0.1) 50%, rgba(0,0,0,0) 70%)',
+				'gradient-dark':
+					'linear-gradient(to bottom, #121212, #171717)',
+				'gradient-glow':
+					'linear-gradient(135deg, rgba(139,92,246,0.8) 0%, rgba(217,70,239,0.6) 50%, rgba(14,165,233,0.6) 100%)'
 			}
 		}
 	},
